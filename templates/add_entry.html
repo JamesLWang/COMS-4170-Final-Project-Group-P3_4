@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<br>
+<div id="submitSuccess"></div>
+<h4>Add New Entry</h4>
+<div id="main_addEntry">
+    <form>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Paper Title</label>
+          <input type="text" class="form-control" id="paperTitle" placeholder="Paper Name Here">
+          <div class="error" id="titleError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Authors</label>
+            <textarea class="form-control" id="paperAuthors" placeholder="Format as Author1_FirstName Author1_LastName, Author2_FirstName Author2_LastName, ..."></textarea>
+            <div class="error" id="authorError"></div>
+        </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Paper Conference</label>
+            <input type="text" class="form-control" id="paperConference" placeholder="Paper Name Here">
+            <div class="error" id="conferenceError"></div>
+        </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Paper Year</label>
+            <input type="text" class="form-control" id="paperYear" placeholder="Paper Name Here">
+            <div class="error" id="yearError"></div>
+        </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Paper URL</label>
+            <input type="text" class="form-control" id="paperURL" placeholder="Link to PDF file, not arXiv; must start with http">
+            <div class="error" id="URLError"></div>
+        </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Abstract</label>
+            <textarea class="form-control" id="paperAbstract" placeholder="Paste abstract here"></textarea>
+            <div class="error" id="abstractError"></div>
+        </div>
+          
+
+          <div class="form-group">
+                <button class="btn btn-outline-secondary" type="button" id="submitAdd">Submit</button>
+          </div>
+        
+      </form>
+</div>
+{% endblock %}

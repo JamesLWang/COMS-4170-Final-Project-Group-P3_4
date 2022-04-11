@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<br>
+<div id="submitSuccess"></div>
+<h4>Edit Entry</h4>
+<div id="main_addEntry">
+    <form>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Paper Title</label>
+          <span class="glyphicon glyphicon-pencil"></span>
+          <input type="text" class="form-control" id="paperTitle" placeholder="Paper Name Here" value="{{data['title']}}">
+          <div class="error" id="titleError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Authors</label>
+            <span class="glyphicon glyphicon-pencil"></span>
+            <textarea class="form-control" id="paperAuthors" placeholder="Format as Author1_FirstName Author1_LastName, Author2_FirstName Author2_LastName, ..." >{{data['authors']}}</textarea>
+            <div class="error" id="authorError"></div>
+        </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Paper Conference</label>
+            <input type="text"  class="form-control" id="paperConference" placeholder="Paper Conference Here" value="{{data['conference']}}">
+            <div class="error" id="conferenceError"></div>
+        </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Paper Year</label>
+            <input type="text" class="form-control" id="paperYear" placeholder="Publication Year Here" value="{{data['year']}}">
+            <div class="error" id="yearError"></div>
+        </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Paper URL</label>
+            <span class="glyphicon glyphicon-pencil"></span>
+            <input type="text" class="form-control" id="paperURL" placeholder="Link to PDF file, not arXiv; must start with http" value="{{data['url']}}">
+            <div class="error" id="URLError"></div>
+        </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Abstract</label>
+            <span class="glyphicon glyphicon-pencil"></span>
+            <textarea class="form-control" id="paperAbstract" rows="5" placeholder="Paste abstract here" >{{data['abstract']}}</textarea>
+            <div class="error" id="abstractError"></div>
+        </div>
+          
+
+    
+      </form>
+
+      <div class="form-group">
+        <button class="btn btn-outline-secondary" type="button" id="submitEdit">Submit</button>
+        <button type="button" class="btn btn-outline-secondary" id="submitDiscard" data-toggle="modal" data-target="#myModal">Discard Changes</button>
+      </div>
+
+      <!-- Button to trigger modal -->
+     
+
+      
+
+
+
+</div>
+<div  id="dialog" class="hidden" title="Confirm Discard">
+  <p>Are you sure you would like to discard all changes?</p>
+  <button type="button" class="btn btn-danger" id="confirmDiscard">Yes</button>
+  <button type="button" class="btn btn-warning" id="closeModal">No</button>
+
+</div>
+ 
+      <p hidden id="entryID">{{data['id']}}</input>
+
+
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div id="main" class=" bg-light">
+<br>
+<div class="row">
+    <div class="col-sm-9">
+        <h4>{{data['title']}}</h4>
+    </div>
+    <div class="col-sm-3 text-right">
+        <a href="/edit/{{data['id']}}" class="btn btn-link" id="entryEdit">Edit</a>
+    </div>
+</div>
+
+<i>
+        {{data['authors']}}
+</i>
+<div>
+    Conference/Journal  & Year:  {{data['conference']}}, {{data['year']}}
+</div>
+<br>
+<div>
+    <i>Abstract: </i><p>{{data['abstract']}}</p>
+</div>
+<center>
+    <div>
+        <!-- <iframe class='scroll' src="{{data['url']}}" style="width:600px; height:500px;" frameborder="0" alt="PDF of {{data['title']}}"></iframe> -->
+        <iframe class="scroll" frameBorder=0  src="{{data['url']}}#toolbar=0&navpanes=0"  style="width:600px; height:500px;" scrolling="no" title="Preview of PDF for '{{data['title']}}'"></iframe>
+        <!-- <iframe class='scroll' src="http://docs.google.com/gview?url={{data['url']}}&embedded=true" style="width:600px; height:500px;" frameborder="0" alt="PDF of {{data['title']}}"></iframe> -->
+    </div>
+</center>
+</div>
+{% endblock %}

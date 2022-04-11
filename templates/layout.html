@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+<!-- jquery -->
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  
+    
+  <title>ML Paper Catalog</title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <script src="{{url_for('static', filename='navbar.js')}}"></script>
+    <script src="{{url_for('static', filename='addEntry.js')}}"></script>
+    <script src="{{url_for('static', filename='editEntry.js')}}"></script>
+
+    
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-light "  style="background-color:#4895EF">
+  <div class="container">
+    <a class="navbar-brand" href="/">Machine Learning Paper Catalog</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- <div class="add-entry"> -->
+      <div class="navbar-nav ml-auto">
+      <a class="nav-link  " href="/add"><div style="color:	rgb(105,105,105)"> Add Entry</div>  </a>
+      <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  </div>
+
+  
+      <div class="navbar-nav">
+          <input type="text" class="form-control" id="searchVal" placeholder="Paper Name, Conference, Authors, etc.">
+          <button class="ml-1 btn-sm" style="background-color: orange" id="submitSearch">Search</button>
+      </div>
+    
+  </div>
+</nav>
+
+    <div class="container">   
+        {% block content %}
+        {% endblock %}
+    </div>
+
+  </body>
+</html>
+
+
+
+
