@@ -9,7 +9,6 @@
 
 <script>
 	var data = {{data|tojson}};
-    console.log(data)
 </script>
 
 {% endblock head %}
@@ -23,17 +22,27 @@
     <div class="col-md-12 title">
         <h1>{{data['title']}}</h1>
     </div>
-    There are three types of toe jumps — in each, you take off by digging in the toe picks on the front of the blade.
-    {{data['src']}}
     <div class="col-md-3">
-        <h3 class="p-2">Toe Loop</h3>
+        <div class="row">
+          <div class="col-md-12">{{data['src'][0]["name"]}}</div>
+          <img src={{data.src[0].gif}}>"
+          <div class="col-md-12">{{data['src'][0]["description"]}}</div>
+        </div>
     </div>
     <div class="col-md-3">
-        <h3 class="p-2">Flip</h3>
+      <div class="row">
+        <div class="col-md-12">{{data['src'][1]["name"]}}</div>
+        <img src={{data.src[1].gif}}>"
+        <div class="col-md-12">{{data['src'][1]["description"]}}</div>
+      </div>
+  </div>
+  <div class="col-md-3">
+    <div class="row">
+      <div class="col-md-12">{{data['src'][2]["name"]}}</div>
+      <img src={{data.src[2].gif}}>"
+      <div class="col-md-12">{{data['src'][2]["description"]}}</div>
     </div>
-    <div class="col-md-3">
-        <h3 class="p-2">Lutz</h3>
-    </div>
+</div>
 </div>
 
 
