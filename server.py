@@ -137,13 +137,13 @@ def learn_skates():
 @app.route('/learn_jump_types')
 def learn_jump_types():
 	global learn_jump_types
-
+	print(learn_jump_types)
 	data = {}
 	data['src'] = learn_jump_types
 	data['title'] = "Jump Types"
 	data['prev'] = "/learn_skates"
 	data['next'] = "/quiz_jump_types"
-
+	print(data)
 	return render_template('learn_v1.html', data=data)
 
 @app.route('/learn_toe_jumps')
@@ -161,7 +161,7 @@ def learn_toe_jumps():
 @app.route('/learn_edge_jumps')
 def learn_edge_jumps():
 	global learn_edge_jumps
-	
+	print(learn_edge_jumps)
 	data = {}
 	data['src'] = learn_edge_jumps
 	data['title'] = "Edge Jumps"
