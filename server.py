@@ -79,24 +79,100 @@ welcome_db = [
 
 ]
 
-final_db = [
-
-]
+final_db = {
+	"score": 0.0
+}
 
 quiz_edge_jumps_db = [
-
+{
+	"correct_answer": "Axel",
+	"description": "[TODO]",
+	"img": "[TODO]",
+	"gif": "[TODO]",
+	"numAttempts": 0,
+	"correct": 0
+},
+{
+	"correct_answer": "Salchow",
+	"description": "[TODO]",
+	"img": "[TODO]",
+	"gif": "[TODO]",
+	"numAttempts": 0,
+	"correct": 0
+},
+{
+	"correct_answer": "Loop",
+	"description": "[TODO]",
+	"img": "[TODO]",
+	"gif": "[TODO]",
+	"numAttempts": 0,
+	"correct": 0
+}
 ]
 
 quiz_toe_jumps_db = [
+{
+	"correct_answer": "Toe Loop",
+	"description": "[TODO]",
+	"img": "[TODO]",
+	"gif": "[TODO]",
+	"numAttempts": 0,
+	"correct": 0
+},
+{
+	"correct_answer": "Flip",
+	"description": "[TODO]",
+	"img": "[TODO]",
+	"gif": "[TODO]",
+	"numAttempts": 0,
+	"correct": 0
+},
+{
+	"correct_answer": "Lutz",
+	"description": "[TODO]",
+	"img": "[TODO]",
+	"gif": "[TODO]",
+	"numAttempts": 0,
+	"correct": 0
+}
 
 ]
 
 quiz_jump_types_db = [
-
+{
+	"correct_answer": "Toe Jump",
+	"description": "[TODO]",
+	"img": "[TODO]",
+	"gif": "[TODO]",
+	"numAttempts": 1,
+	"correct": 0
+},
+{
+	"correct_answer": "Edge Jump",
+	"description": "[TODO]",
+	"img": "[TODO]",
+	"gif": "[TODO]",
+	"numAttempts": 1,
+	"correct": 0
+},
+{
+	"correct_answer": "Toe Jump",
+	"description": "[TODO]",
+	"img": "[TODO]",
+	"gif": "[TODO]",
+	"numAttempts": 1,
+	"correct": 0
+}
 ]
 
-# ROUTES
+score_db = {
+	
+}
 
+def compute_score():
+	pass
+
+# ROUTES
 @app.route('/')
 def welcome():
 	global welcome_db

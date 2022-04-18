@@ -41,14 +41,17 @@ function makeNames(names) {
     $("#ppc").droppable({
         drop: function(event, ui) {
             itemDropped(event, ui, ppc, nppc)
-            console.log(ui.draggable.html() + " Dropped into PPC")
+            // console.log(ui.draggable.html() + " Dropped into Toe Jumps")
+            console.log("Item Dropped Correctly into Toe Jumps, +1 - [TODO]: Provide Feedback and make item disappear")
+            console.log("[TODO] Keep Next button disabled until all items are gone")
         },
     });
 
     $("#nppc").droppable({
         drop: function(event, ui) {
             itemDropped(event, ui, nppc, ppc)
-            console.log(ui.draggable.html() + " Dropped into NPPC")
+            // console.log(ui.draggable.html() + " Dropped into NPPC")
+            console.log("Item Dropped Correctly into NPPC")
         },
     });
 

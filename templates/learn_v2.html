@@ -22,31 +22,24 @@
     <div class="col-md-12 title">
         <h1>{{data['title']}}</h1>
     </div>
+    
+    {% for res in data['src'] %}
     <div class="col-md-3">
-        <div class="row">
-          <div class="col-md-12">{{data['src'][0]["name"]}}</div>
-          <img src={{data.src[0].gif}}>"
-          <div class="col-md-12">{{data['src'][0]["description"]}}</div>
-        </div>
+        <h3 class="p-2">{{res['name']}}</h3>
+        <p>{{res['description']}}</p>
+        <img src="{{res['img']}}", width=33%, class="rounded">
+        <br>
+        <img src="{{res['gif']}}", width=50%, class="rounded">
     </div>
-    <div class="col-md-3">
-      <div class="row">
-        <div class="col-md-12">{{data['src'][1]["name"]}}</div>
-        <img src={{data.src[1].gif}}>"
-        <div class="col-md-12">{{data['src'][1]["description"]}}</div>
-      </div>
-  </div>
-  <div class="col-md-3">
-    <div class="row">
-      <div class="col-md-12">{{data['src'][2]["name"]}}</div>
-      <img src={{data.src[2].gif}}>"
-      <div class="col-md-12">{{data['src'][2]["description"]}}</div>
-    </div>
+    {% endfor %}
+
+
+
 </div>
 </div>
 
 
-	<ul class="pagination justify-content-end">
+	<ul class="pagination justify-content-end mr-3">
     <li class="page-item">
       <a class="page-link" href="{{data['prev']}}" tabindex="-1">Previous</a>
     </li>

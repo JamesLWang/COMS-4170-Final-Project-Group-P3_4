@@ -25,17 +25,15 @@
     {% for res in data['src'] %}
     <div class="col-md-5">
         <h3 class="p-2">{{res['name']}}</h3>
+        <p>{{res['description']}}</p>
+        <img src="{{res['img']}}", width=50%, class="rounded">
+        <br>
+        <img src="{{res['gif']}}", width=50%, class="rounded">
     </div>
     {% endfor %}
-    <div class="col-md-5">
-        <h3 class="p-2">Toe Jumps</h3>
-    </div>
-    <div class="col-md-5">
-        <h3 class="p-2">Edge Jumps</h3>
-    </div>
 </div>
 
-	<ul class="pagination justify-content-end">
+	<ul class="pagination justify-content-end mr-3">
     <li class="page-item">
       <a class="page-link" href="{{data['prev']}}" tabindex="-1">Previous</a>
     </li>
