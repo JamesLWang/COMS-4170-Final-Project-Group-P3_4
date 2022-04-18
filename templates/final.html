@@ -1,34 +1,34 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="welcome" alt="Machine learning background photo"> 
-        <h3>FINAL PAGE HERE</h3>
-        <div class="row" style="height: 15%">
-            <div class="col-sm-8">
-                Insert Homepage Description Here
-            <br>
-            </div>
-            <div class="col-sm-4">
-                Your final score is {{data['src']['score']}}.
-            <br>
-            </div>
-        </div>
-        
+    <div class="" alt="Machine learning background photo"> 
+<div class="row">
+    <div class="col-md-12 col-sm-12 head">
+        <h2 class="text-bolder">Congratulations on completing the course!</h1>
+        <h3 class="lead">Results</h3>
     </div>
-    
-        <div id="main">
-            <br>
-            <br>
-    </div>
+</div>
 
-<ul class="pagination justify-content-end mr-3">
-    <li class="page-item">
-      <a class="page-link" href="{{data['prev']}}" tabindex="-1">Previous</a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="{{data['restart']}}"><b>Restart</b></a>
-    </li>
-  </ul>
+    
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        Table Here.
+    </div>
+    <div class="col-md-6 col-sm-6">
+        Score: <label class="score" name="score"></label>
+    </div>
+</div>
+
+
+<center>
+    <span>
+        <a href="{{data['prev']}}"><button class="btn btn-lg btn-success">Previous</button></a>
+    </span>
+    <span>
+        <a href="{{data['restart']}}"><button class="btn btn-lg btn-warning">Retake</button></a>
+    </span>
+</center>
+
 
 {% endblock %}
 
