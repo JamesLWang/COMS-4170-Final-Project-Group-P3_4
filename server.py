@@ -93,21 +93,21 @@ def welcome():
 def final():
 	global final
 
-	welcome = {}
-	welcome['title'] = "Course Ended"
-	welcome['prev'] = "quiz_edge_jumps"
-	welcome['restart'] = "/"
+	final = {}
+	final['title'] = "Course Ended"
+	final['prev'] = "quiz_edge_jumps"
+	final['restart'] = "/"
 
-	return render_template('quiz.html', data=final)
+	return render_template('final.html', data=final)
 
 @app.route('/learn_skates')
 def learn_skates():
 	global learn_skates
 
-	learn_jump_types = {}
-	learn_jump_types['title'] = "Skate Basics"
-	learn_jump_types['prev'] = "/"
-	learn_jump_types['next'] = "/learn_jump_types"
+	learn_skates = {}
+	learn_skates['title'] = "Skate Basics"
+	learn_skates['prev'] = "/"
+	learn_skates['next'] = "/learn_jump_types"
 
 	return render_template('learn_v1.html', data=learn_skates)
 
