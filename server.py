@@ -6,7 +6,7 @@ import random
 app = Flask(__name__)
 
 # Collection of Databases for Learning
-learn_skates = [
+learn_skates_db = [
 	{
 		"name": "Toe Pick",
 		"description": "The toe pick is a little set of jagged teeth at the front of the blade that helps skaters stab into the ice to push upward and launch themselves into the air.",
@@ -20,7 +20,7 @@ learn_skates = [
 ]
 
 
-learn_jump_types = [
+learn_jump_types_db = [
 	{
 		"name": "Toe Jump",
 		"description": "In toe jumps, the skater plants the toe-pick of their free leg and uses it to help launch them into the air. You'll see a skater kick the front of their blade into the ice before a toe jump.",
@@ -33,7 +33,7 @@ learn_jump_types = [
 	}	
 ]
 
-learn_toe_jumps = [
+learn_toe_jumps_db = [
 	{
 		"name": "Toe Loop",
         "description": "As seen in the above GIF of Spanish skater Javier Fernández, the jump begins with the skater approaching the jump backward on the outside edge of one foot, then landing the jump on the outside edge of the same foot.",
@@ -54,7 +54,7 @@ learn_toe_jumps = [
 	}
 ]
 
-learn_edge_jumps = [
+learn_edge_jumps_db = [
 	{
 		"name": "Salchow",
         "description": "If you’re looking to better understand the difference between an edge jump and a toe jump, the salchow is one of the jumps that makes it easiest to spot. The salchow doesn’t use a toe pick, and you can clearly see the skater launch himself from the knee bend. It starts from the inside edge of one foot and ends on the outside edge of the opposite foot.",
@@ -75,23 +75,23 @@ learn_edge_jumps = [
 	}
 ]
 
-welcome = [
+welcome_db = [
 
 ]
 
-final = [
+final_db = [
 
 ]
 
-quiz_edge_jumps = [
+quiz_edge_jumps_db = [
 
 ]
 
-quiz_toe_jumps = [
+quiz_toe_jumps_db = [
 
 ]
 
-quiz_jump_types = [
+quiz_jump_types_db = [
 
 ]
 
@@ -99,10 +99,10 @@ quiz_jump_types = [
 
 @app.route('/')
 def welcome():
-	global welcome
+	global welcome_db
 
 	data = {}
-	data['src'] = welcome
+	data['src'] = welcome_db
 	data['title'] = "Identifying Figure Skating Jumps"
 	data['prev'] = "/"
 	data['next'] = "/learn_skates"
@@ -112,10 +112,10 @@ def welcome():
 
 @app.route('/final')
 def final():
-	global final
+	global final_db
 
 	data = {}
-	data['src'] = final
+	data['src'] = final_db
 	data['title'] = "Course Ended"
 	data['prev'] = "quiz_edge_jumps"
 	data['restart'] = "/"
@@ -124,10 +124,10 @@ def final():
 
 @app.route('/learn_skates')
 def learn_skates():
-	global learn_skates
+	global learn_skates_db
 
 	data= {}
-	data['src'] = learn_skates
+	data['src'] = learn_skates_db
 	data['title'] = "Skate Basics"
 	data['prev'] = "/"
 	data['next'] = "/learn_jump_types"
@@ -136,22 +136,22 @@ def learn_skates():
 
 @app.route('/learn_jump_types')
 def learn_jump_types():
-	global learn_jump_types
-	print(learn_jump_types)
+	global learn_jump_types_db
+
 	data = {}
-	data['src'] = learn_jump_types
+	data['src'] = learn_jump_types_db
 	data['title'] = "Jump Types"
 	data['prev'] = "/learn_skates"
 	data['next'] = "/quiz_jump_types"
-	print(data)
+
 	return render_template('learn_v1.html', data=data)
 
 @app.route('/learn_toe_jumps')
 def learn_toe_jumps():
-	global learn_toe_jumps
+	global learn_toe_jumps_db
 
 	data = {}
-	data['src'] = learn_toe_jumps
+	data['src'] = learn_toe_jumps_db
 	data['title'] = "Toe Jumps"
 	data['prev'] = "/quiz_jump_types"
 	data['next'] = "/quiz_toe_jumps"
@@ -160,10 +160,10 @@ def learn_toe_jumps():
 
 @app.route('/learn_edge_jumps')
 def learn_edge_jumps():
-	global learn_edge_jumps
-	print(learn_edge_jumps)
+	global learn_edge_jumps_db
+	
 	data = {}
-	data['src'] = learn_edge_jumps
+	data['src'] = learn_edge_jumps_db
 	data['title'] = "Edge Jumps"
 	data['prev'] = "/quiz_toe_jumps"
 	data['next'] = "/quiz_edge_jumps"
@@ -173,10 +173,10 @@ def learn_edge_jumps():
 
 @app.route('/quiz_edge_jumps')
 def quiz_edge_jumps():
-	global quiz_edge_jumps
+	global quiz_edge_jumps_db
 	
 	data = {}
-	data['src'] = quiz_edge_jumps
+	data['src'] = quiz_edge_jumps_db
 	data['title'] = "Edge Jumps Quiz"
 	data['prev'] = "/learn_edge_types"
 	data['next'] = "/final"
@@ -185,10 +185,10 @@ def quiz_edge_jumps():
 
 @app.route('/quiz_toe_jumps')
 def quiz_toe_jumps():
-	global quiz_toe_jumps
+	global quiz_toe_jumps_db
 	
 	data = {}
-	data['src'] = quiz_toe_jumps
+	data['src'] = quiz_toe_jumps_db
 	data['title'] = "Toe Jumps Quiz"
 	data['prev'] = "/learn_toe_jumps"
 	data['next'] = "/learn_edge_jumps"
@@ -197,10 +197,10 @@ def quiz_toe_jumps():
 
 @app.route('/quiz_jump_types')
 def quiz_jump_types():
-	global quiz_jump_types
+	global quiz_jump_types_db
 
 	data = {}
-	data['src'] = quiz_jump_types
+	data['src'] = quiz_jump_types_db
 	data['title'] = "Jump Types Quiz"
 	data['prev'] = "/learn_jump_types"
 	data['next'] = "/learn_toe_jumps"

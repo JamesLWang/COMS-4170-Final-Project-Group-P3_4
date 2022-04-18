@@ -22,6 +22,11 @@
     <div class="col-md-12 title">
         <h1>Types of Jumps</h1>
     </div>
+    {% for res in data['src'] %}
+    <div class="col-md-5">
+        <h3 class="p-2">{{res['name']}}</h3>
+    </div>
+    {% endfor %}
     <div class="col-md-5">
         <h3 class="p-2">Toe Jumps</h3>
     </div>
