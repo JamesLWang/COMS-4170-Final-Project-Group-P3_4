@@ -179,6 +179,48 @@ for k in data.keys():
 
 
 # ROUTES
+
+@app.route('/final')
+def final():
+	return render_template('quiz.html')
+
+
+@app.route('/edgejumps_quiz')
+def edgejumps_quiz():
+	return render_template('quiz.html')
+
+@app.route('/edgejumps')
+def edgejumps():
+	return render_template('quiz.html')
+
+@app.route('/toejumps_quiz')
+def toejumps_quiz():
+	return render_template('quiz.html')
+
+@app.route('/toejumps')
+def toejumps():
+	return render_template('quiz.html')
+
+@app.route('/jumptypes_quiz')
+def jumptypes_quiz():
+	return render_template('quiz.html')
+
+@app.route('/jumptypes')
+def jumptypes():
+	return render_template('quiz.html')
+
+
+@app.route('/skatebasics')
+def skatebasics():
+	return render_template('quiz.html')
+
+@app.route('/quiz')
+def quiz():
+	return render_template('quiz.html')
+
+
+
+
 @app.route('/')
 def welcome():
   return render_template('welcome.html', topK=3, data=random.sample(list(data.values()),3))
