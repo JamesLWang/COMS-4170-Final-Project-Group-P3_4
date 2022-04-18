@@ -178,7 +178,7 @@ def quiz_edge_jumps():
 	data = {}
 	data['src'] = quiz_edge_jumps_db
 	data['title'] = "Edge Jumps Quiz"
-	data['prev'] = "/learn_edge_types"
+	data['prev'] = "/learn_edge_jumps"
 	data['next'] = "/final"
 
 	return render_template('quiz_v2.html', data=data)
