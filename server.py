@@ -79,9 +79,9 @@ welcome_db = [
 
 ]
 
-final_db = [
-
-]
+final_db = {
+	"score": 0.0
+}
 
 quiz_edge_jumps_db = [
 {
@@ -171,7 +171,7 @@ score_db = {
 
 def compute_score():
 	pass
-	
+
 # ROUTES
 @app.route('/')
 def welcome():
