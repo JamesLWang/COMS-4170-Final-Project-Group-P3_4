@@ -24,16 +24,12 @@
         <h1>{{data['title']}}</h1>
     </div>
     There are three types of toe jumps — in each, you take off by digging in the toe picks on the front of the blade.
-    {{data['src']}}
+    
+    {% for res in data['src'] %}
     <div class="col-md-3">
-        <h3 class="p-2">Toe Loop</h3>
+        <h3 class="p-2">{{res['name']}}</h3>
     </div>
-    <div class="col-md-3">
-        <h3 class="p-2">Flip</h3>
-    </div>
-    <div class="col-md-3">
-        <h3 class="p-2">Lutz</h3>
-    </div>
+    {% endfor %}
 </div>
 
 
