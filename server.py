@@ -75,108 +75,137 @@ learn_edge_jumps = [
 	}
 ]
 
+welcome = [
+
+]
+
+final = [
+
+]
+
+quiz_edge_jumps = [
+
+]
+
+quiz_toe_jumps = [
+
+]
+
+quiz_jump_types = [
+
+]
+
 # ROUTES
 
 @app.route('/')
 def welcome():
 	global welcome
 
-	welcome = {}
-	welcome['title'] = "Identifying Figure Skating Jumps"
-	welcome['prev'] = "/"
-	welcome['next'] = "/learn_skates"
+	data = {}
+	data['src'] = welcome
+	data['title'] = "Identifying Figure Skating Jumps"
+	data['prev'] = "/"
+	data['next'] = "/learn_skates"
 
-	return render_template('welcome.html', data=welcome)
+	return render_template('welcome.html', data=data)
 
 
 @app.route('/final')
 def final():
 	global final
 
-	final = {}
-	final['title'] = "Course Ended"
-	final['prev'] = "quiz_edge_jumps"
-	final['restart'] = "/"
+	data = {}
+	data['src'] = final
+	data['title'] = "Course Ended"
+	data['prev'] = "quiz_edge_jumps"
+	data['restart'] = "/"
 
-	return render_template('final.html', data=final)
+	return render_template('final.html', data=data)
 
 @app.route('/learn_skates')
 def learn_skates():
 	global learn_skates
 
-	learn_skates = {}
-	learn_skates['title'] = "Skate Basics"
-	learn_skates['prev'] = "/"
-	learn_skates['next'] = "/learn_jump_types"
+	data= {}
+	data['src'] = learn_skates
+	data['title'] = "Skate Basics"
+	data['prev'] = "/"
+	data['next'] = "/learn_jump_types"
 
-	return render_template('learn_v1.html', data=learn_skates)
+	return render_template('learn_v1.html', data=data)
 
 @app.route('/learn_jump_types')
 def learn_jump_types():
 	global learn_jump_types
 
-	learn_jump_types = {}
-	learn_jump_types['title'] = "Jump Types"
-	learn_jump_types['prev'] = "/learn_skates"
-	learn_jump_types['next'] = "/quiz_jump_types"
+	data = {}
+	data['src'] = learn_jump_types
+	data['title'] = "Jump Types"
+	data['prev'] = "/learn_skates"
+	data['next'] = "/quiz_jump_types"
 
-	return render_template('learn_v1.html', data=learn_jump_types)
+	return render_template('learn_v1.html', data=data)
 
 @app.route('/learn_toe_jumps')
 def learn_toe_jumps():
 	global learn_toe_jumps
 
-	learn_toe_jumps = {}
-	learn_toe_jumps['title'] = "Toe Jumps"
-	learn_toe_jumps['prev'] = "/quiz_jump_types"
-	learn_toe_jumps['next'] = "/quiz_toe_jumps"
+	data = {}
+	data['src'] = learn_toe_jumps
+	data['title'] = "Toe Jumps"
+	data['prev'] = "/quiz_jump_types"
+	data['next'] = "/quiz_toe_jumps"
 
-	return render_template('learn_v2.html', data=learn_toe_jumps)
+	return render_template('learn_v2.html', data=data)
 
 @app.route('/learn_edge_jumps')
 def learn_edge_jumps():
 	global learn_edge_jumps
 	
-	learn_edge_jumps = {}
-	learn_edge_jumps['title'] = "Edge Jumps"
-	learn_edge_jumps['prev'] = "/quiz_toe_jumps"
-	learn_edge_jumps['next'] = "/quiz_edge_jumps"
+	data = {}
+	data['src'] = learn_edge_jumps
+	data['title'] = "Edge Jumps"
+	data['prev'] = "/quiz_toe_jumps"
+	data['next'] = "/quiz_edge_jumps"
 
-	return render_template('learn_v2.html', data=learn_edge_jumps)
+	return render_template('learn_v2.html', data=data)
 
 
 @app.route('/quiz_edge_jumps')
 def quiz_edge_jumps():
 	global quiz_edge_jumps
 	
-	quiz_edge_jumps = {}
-	quiz_edge_jumps['title'] = "Edge Jumps Quiz"
-	quiz_edge_jumps['prev'] = "/learn_edge_types"
-	quiz_edge_jumps['next'] = "/final"
+	data = {}
+	data['src'] = quiz_edge_jumps
+	data['title'] = "Edge Jumps Quiz"
+	data['prev'] = "/learn_edge_types"
+	data['next'] = "/final"
 
-	return render_template('quiz_v2.html', data=quiz_edge_jumps)
+	return render_template('quiz_v2.html', data=data)
 
 @app.route('/quiz_toe_jumps')
 def quiz_toe_jumps():
 	global quiz_toe_jumps
 	
-	quiz_toe_jumps = {}
-	quiz_toe_jumps['title'] = "Toe Jumps Quiz"
-	quiz_toe_jumps['prev'] = "/learn_toe_types"
-	quiz_toe_jumps['next'] = "/learn_edge_jumps"
+	data = {}
+	data['src'] = quiz_toe_jumps
+	data['title'] = "Toe Jumps Quiz"
+	data['prev'] = "/learn_toe_jumps"
+	data['next'] = "/learn_edge_jumps"
 
-	return render_template('quiz_v2.html', data=quiz_toe_jumps)
+	return render_template('quiz_v2.html', data=data)
 
 @app.route('/quiz_jump_types')
 def quiz_jump_types():
 	global quiz_jump_types
 
-	quiz_jump_types = {}
-	quiz_jump_types['title'] = "Jump Types Quiz"
-	quiz_jump_types['prev'] = "/learn_jump_types"
-	quiz_jump_types['next'] = "/learn_toe_jumps"
+	data = {}
+	data['src'] = quiz_jump_types
+	data['title'] = "Jump Types Quiz"
+	data['prev'] = "/learn_jump_types"
+	data['next'] = "/learn_toe_jumps"
 
-	return render_template('quiz_v1.html', data=quiz_jump_types)
+	return render_template('quiz_v1.html', data=data)
 
 ## Everything below is for reference only
 
