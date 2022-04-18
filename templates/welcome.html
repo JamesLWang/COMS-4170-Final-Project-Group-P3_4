@@ -1,15 +1,32 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="welcome" alt="Machine learning background photo"> 
-        <h3>Learn Figure Skating Jumps Here</h3>
-        <div class="row" style="height: 15%">
-            <div class="col-sm-10">
-                Insert Homepage Description Here
-            <br>
-            </div>
-        </div>
-        
+    <div class="" alt="Machine learning background photo"> 
+        <body>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 head">
+        <h1 class="text-bolder">Figure Ice Skating</h1>
+        <h3 class="lead">Learn Figure Skating Jumps here!</h3>
+    </div>
+  </div>
+
+  <!--Content Section-->
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <h1 class="text-bolder content">Learn about the following jumps</h1>
+      <ul style="list-style-type:circle">
+        <li>Toe Loop</li>
+        <li>Flip</li>
+        <li>Lutz</li>
+        <li>Salchow</li>
+        <li>Loop</li>
+        <li>Axel</li>
+      </ul>
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <img class="pic1" src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/10104007/2018_01_26_13_04_23.gif" />
+    </div>
+  </div>
     </div>
     
         <div id="main">
@@ -17,16 +34,11 @@
             <br>
     </div>
 
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-end">
-<!--     <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Previous</a>
-    </li> -->
-    <li class="page-item mr-3">
-      <a class="page-link " href="{{data['next']}}"><b>Start</b></a>
-    </li>
-  </ul>
-</nav>
+     <center>
+    <a href="{{data['next']}}"><button id="start-btn"  class="btn btn-lg btn-light start">Start Learning!</button></a>
+  </center>
+
+
 
 {% endblock %}
 
