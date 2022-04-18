@@ -266,6 +266,29 @@ def edit(id):
 		return jsonify(res=res)
 		return render_template('add_entry.html') # render_template("view.html", data=data[str(id)])
 
+@app.route('/learn_skates')
+def learn_skates():
+    global learn_skates
+	
+    return render_template('learn_v1.html', data=learn_skates)
+
+@app.route('/learn_jump_types')
+def learn_jump_types():
+    global learn_jump_types
+	
+    return render_template('learn_v1.html', data=learn_jump_types)
+
+@app.route('/learn_toe_jumps')
+def learn_toe_jumps():
+    global learn_toe_jumps
+
+    return render_template('learn_v2.html', data=learn_toe_jumps)
+
+@app.route('/learn_edge_jumps')
+def learn_edge_jumps():
+    global learn_edge_jumps
+	
+    return render_template('learn_v2.html', data=learn_edge_jumps)
 
 if __name__ == '__main__':
     app.run(debug = True)
