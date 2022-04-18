@@ -5,6 +5,76 @@ from flask import Response, request, jsonify
 import random
 app = Flask(__name__)
 
+# Collection of Databases for Learning
+learn_skates = [
+	{
+		"name": "Toe Pick",
+		"description": "The toe pick is a little set of jagged teeth at the front of the blade that helps skaters stab into the ice to push upward and launch themselves into the air.",
+		"img": "https://images.squarespace-cdn.com/content/v1/5a086441914e6b339a5f2b21/1542250387886-Q6SQ1LY3GRCAOE6IKNVE/edge.JPG?format=750w"
+	},
+	{
+		"name": "Edges",
+		"description": "The inside edges are toward the big toe, and the outside edges are toward the pinky toe. Which edge a skater puts his weight on going into a jump is what distinguishes one jump from another.",
+		"img": "https://bigthink.com/wp-content/uploads/2018/02/18411162.jpg?fit=1200,675"
+	}
+]
+
+
+learn_jump_types = [
+	{
+		"name": "Toe Jump",
+		"description": "In toe jumps, the skater plants the toe-pick of their free leg and uses it to help launch them into the air. You'll see a skater kick the front of their blade into the ice before a toe jump.",
+		"gif": "https://cdn.theatlantic.com/thumbor/8ws46t__LGCg_jT6sj5sh8-KMvo=/media/img/posts/2014/02/gracielutz/original.gif"
+	},
+	{
+		"name": "Edge Jump",
+		"description": "In edge jumps, the skater essentially just uses a knee bend to launch.",
+		"gif": "https://cdn.theatlantic.com/thumbor/7b2331oQuSNtccoFpvWhUBRBLPU=/media/img/posts/2014/02/2014_02_04_15_51_39/original.gif"
+	}	
+]
+
+learn_toe_jumps = [
+	{
+		"name": "Toe Loop",
+        "description": "As seen in the above GIF of Spanish skater Javier Fernández, the jump begins with the skater approaching the jump backward on the outside edge of one foot, then landing the jump on the outside edge of the same foot.",
+        "img": "https://skatesweden.se/wp-content/uploads/2017/11/Toe-Loop-930x280.jpg",
+        "gif": "https://cdn.theatlantic.com/thumbor/9h7A-k5S7N2ob4l8XGnP0sdWJSg=/media/img/posts/2014/02/toe_loop/original.gif",
+	},
+	{
+		"name": "Flip",
+        "description": "As seen in the GIF above of Russian skater Alina Zagitova, the flip starts on the inside edge of one foot while the skater approaches the jump backward and uses the toe pick of her other foot to take off, and ends with the skater landing on the outside edge of the opposite foot.",
+        "img": "https://skatesweden.se/wp-content/uploads/2017/11/Flip-930x280.jpg",
+        "gif": "https://cdn.theatlantic.com/thumbor/E1d4g-zCWjpR294Rr4676MujLno=/media/img/posts/2014/02/kimtripleflip/original.gif",
+	},
+	{
+		"name": "Lutz",
+        "description": "The lutz, a toe jump, is a lot like the flip. But instead of approaching the jump on an inside edge, it requires skaters to take off from the outside edge of one foot and then land, as they would with a flip, on the outside edge of their opposite foot. Note, in the GIF above, how American skater Nathan Chen leans into the outside edge of his left foot as he extends his right leg and toe pick behind him to launch himself into the air.",
+        "img": "https://skatesweden.se/wp-content/uploads/2017/11/Lutz-930x280.jpg",
+        "gif": "https://cdn.theatlantic.com/thumbor/iFO_pvUSlqklv_2vei29El3o7JI=/media/img/posts/2014/02/yuna_lutz/original.gif",
+	}
+]
+
+learn_edge_jumps = [
+	{
+		"name": "Salchow",
+        "description": "If you’re looking to better understand the difference between an edge jump and a toe jump, the salchow is one of the jumps that makes it easiest to spot. The salchow doesn’t use a toe pick, and you can clearly see the skater launch himself from the knee bend. It starts from the inside edge of one foot and ends on the outside edge of the opposite foot.",
+        "img": "https://skatesweden.se/wp-content/uploads/2017/11/Salchow-930x280.jpg",
+        "gif": "https://cdn.theatlantic.com/thumbor/JmGnjavDtfgqxsk5T3tGa63FhWc=/media/img/posts/2014/02/salchoww/original.gif",
+	},
+	{
+		"name": "Loop",
+        "description": "The loop is another edge jump. Though it’s executed differently from the toe loop (which I’ll explain below), it shares the same entry and landing as the toe loop — approaching the jump backward on the outside edge of one foot, then landing the jump on the outside edge of the same foot — minus the toe pick. You can see this in the above GIF, where American skater Nathan Chen performs a triple loop.",
+        "img": "https://skatesweden.se/wp-content/uploads/2017/11/Skatesweden_ogel_loop1-1280x417-930x280.jpg",
+        "gif": "https://cdn.theatlantic.com/thumbor/bkOBNDHWinZtb3xCrMoF_PHWNj4=/media/img/posts/2014/02/loop/original.gif",
+	},
+	{
+		"name": "Axel",
+        "description": "The axel is the easiest jump to spot and arguably the hardest to execute. It is the only jump where the skater takes off while facing forward. “The skater needs an extra half rotation to land gliding backward,” Morgan explained, due to that front-facing takeoff. “The extra half rotation is notable because it’s much more difficult to create rotation when taking off from a forward edge.” You can see that extra half rotation in the GIF above, as Korean skater Yuna Kim leaps off the ice and swings her right leg around to vault herself off the ice and then does two full rotations in the air to complete a double axel.",
+        "img": "https://skatesweden.se/wp-content/uploads/2017/11/image24-930x280.jpg",
+        "gif": "https://cdn.theatlantic.com/thumbor/1oBHvMp0uHTRYTOI8XKcN55QueQ=/media/img/posts/2014/02/axel/original.gif",
+	}
+]
+
 LAST_ID = 10	
 data = {
 	"1":{
