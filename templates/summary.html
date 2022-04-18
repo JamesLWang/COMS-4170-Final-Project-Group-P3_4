@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!--Banner-->
+<div class="row">
+    <div class="col-md-12 col-sm-12 head">
+        <h2 class="text-bolder">Congratulations on completing the course!</h1>
+        <h3 class="lead">Results</h3>
+    </div>
+</div>
+
+<!--Score-->
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        Table Here.
+    </div>
+    <div class="col-md-6 col-sm-6">
+        Score: <label class="score" name="score"></label>
+    </div>
+</div>
+
+<!--Navigation-->
+<center>
+    <span>
+        <button class="btn btn-lg btn-warning">Retake</button>
+    </span>
+    <span>
+        <button class="btn btn-lg btn-success">Finish</button>
+    </span>
+</center>
+
+{% endblock %}

@@ -12,6 +12,9 @@ img{
   opacity: 0.5;
 }
 
+html{
+  scroll-behavior: smooth;
+}
 .container{
     /*display: block;*/
     padding-left: 10px;
@@ -138,7 +141,7 @@ iframe {
       height: 150px;
       width: 15px;
       background-color: white ;
-      z-index=1000000;
+      z-index:1000000;
   }
 
   #main{
@@ -152,6 +155,77 @@ iframe {
     display: none;
   }
 
+  /* header {
+    padding-top: 9.5rem;
+    padding-bottom: 6rem;
+  }
 
+  .bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: lightblue !important;
+  }
+  
+  .bg-gradient {
+    background-image: var(--bs-gradient) !important;
+  }
 
+  .container {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
 
+.px-4 {
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.fw-bolder {
+  font-weight: bolder !important;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+} */
+
+.head{
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: lightblue;
+  text-align: center;
+  color: darkslateblue ;
+}
+
+.text-bolder{
+  font-weight: bold !important;
+}
+
+.content{
+  color: burlywood;
+}
+
+li{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: darkkhaki;
+  font-size: large;
+}
+
+.start {
+  margin-top: 30px;
+  color: black;
+}
+
+.pic1 {
+  opacity: 1;
+}
+
+.score{
+  color:green;
+}
