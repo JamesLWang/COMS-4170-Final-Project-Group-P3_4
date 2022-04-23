@@ -153,6 +153,9 @@ function querySubmitter(){
     };
         
     
+$( function() {
+    $( "#draggable" ).draggable();
+  } );
 
 
 $(document).ready(function() {
