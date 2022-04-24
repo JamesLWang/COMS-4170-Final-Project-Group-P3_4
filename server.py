@@ -219,8 +219,8 @@ def welcome():
 	return render_template('welcome.html', data=data)
 
 
-@app.route('/final')
-def final():
+@app.route('/final/<score>')
+def final(score):
 	global final_db
 
 	data = {}
@@ -229,13 +229,14 @@ def final():
 	data['prev'] = "quiz_edge_jumps"
 	data['restart'] = "/"
 
-	return render_template('final.html', data=data)
+	return render_template('final.html', data=data, score=score)
 
 @app.route('/learn_skates')
 def learn_skates():
 	global learn_skates_db
 
 	data= {}
+	data['score'] = 0
 	data['src'] = learn_skates_db
 	data['title'] = "Skate Basics"
 	data['prev'] = "/"
@@ -243,11 +244,12 @@ def learn_skates():
 
 	return render_template('learn_v1.html', data=data)
 
-@app.route('/learn_jump_types')
-def learn_jump_types():
+@app.route('/learn_jump_types/<score>')
+def learn_jump_types(score):
 	global learn_jump_types_db
 
 	data = {}
+	data['score'] = score
 	data['src'] = learn_jump_types_db
 	data['title'] = "Jump Types"
 	data['prev'] = "/learn_skates"
@@ -255,11 +257,12 @@ def learn_jump_types():
 
 	return render_template('learn_v1.html', data=data)
 
-@app.route('/learn_toe_jumps')
-def learn_toe_jumps():
+@app.route('/learn_toe_jumps/<score>')
+def learn_toe_jumps(score):
 	global learn_toe_jumps_db
 
 	data = {}
+	data['score'] = score
 	data['src'] = learn_toe_jumps_db
 	data['title'] = "Toe Jumps"
 	data['prev'] = "/quiz_jump_types"
@@ -267,11 +270,12 @@ def learn_toe_jumps():
 
 	return render_template('learn_v2.html', data=data)
 
-@app.route('/learn_edge_jumps')
-def learn_edge_jumps():
+@app.route('/learn_edge_jumps/<score>')
+def learn_edge_jumps(score):
 	global learn_edge_jumps_db
 	
 	data = {}
+	data['score'] = score
 	data['src'] = learn_edge_jumps_db
 	data['title'] = "Edge Jumps"
 	data['prev'] = "/quiz_toe_jumps"
@@ -279,12 +283,13 @@ def learn_edge_jumps():
 
 	return render_template('learn_v2.html', data=data)
 
-
-@app.route('/quiz_edge_jumps')
-def quiz_edge_jumps():
+@app.route('/quiz_edge_jumps/<score>')
+def quiz_edge_jumps(score):
 	global quiz_edge_jumps_db
+	global final_db
 	
 	data = {}
+	data['score'] = score
 	data['src'] = quiz_edge_jumps_db
 	data['title'] = "Edge Jumps Quiz"
 	data['prev'] = "/learn_edge_jumps"
@@ -292,11 +297,12 @@ def quiz_edge_jumps():
 
 	return render_template('quiz_v2.html', data=data)
 
-@app.route('/quiz_toe_jumps')
-def quiz_toe_jumps():
+@app.route('/quiz_toe_jumps/<score>')
+def quiz_toe_jumps(score):
 	global quiz_toe_jumps_db
 	
 	data = {}
+	data['score'] = score
 	data['src'] = quiz_toe_jumps_db
 	data['title'] = "Toe Jumps Quiz"
 	data['prev'] = "/learn_toe_jumps"
@@ -304,11 +310,12 @@ def quiz_toe_jumps():
 
 	return render_template('quiz_v2.html', data=data)
 
-@app.route('/quiz_jump_types')
-def quiz_jump_types():
+@app.route('/quiz_jump_types/<score>')
+def quiz_jump_types(score):
 	global quiz_jump_types_db
 
 	data = {}
+	data['score'] = score
 	data['src'] = quiz_jump_types_db
 	data['title'] = "Jump Types Quiz"
 	data['prev'] = "/learn_jump_types"

@@ -1,4 +1,4 @@
-var score = 0;
+//var score = 0;
 
 $( function() {
     console.log("OK")
@@ -26,14 +26,17 @@ $( function() {
           if((ui.draggable.attr('correct-answer')) == ($(this).attr('option'))) {
             $( this ).addClass( "ui-state-highlight" );
             // correct answer popup
-            score++;
-            console.log(score);
+            data['score']++; //TODO: not working, fix
+            console.log(data['score']);
+            //score++;
+            //console.log(score);
             //make no longer draggable
             ui.draggable( 'disable' );
           }
           else {
             // wrong answer popup
-            console.log(score);
+            console.log(data['score']);
+            //console.log(score);
             // make no longer draggable
             ui.draggable( 'disable' );
           }
