@@ -1,3 +1,5 @@
+var score = 0;
+
 $( function() {
     console.log("OK")
     $( "#draggable" ).draggable();
@@ -16,9 +18,25 @@ $( function() {
     $( "#draggable_6" ).draggable();
     $( ".droppable" ).droppable({
       drop: function( event, ui ) {
-        $( this )
-          .addClass( "ui-state-highlight" )
+        //$( this )
+          //.addClass( "ui-state-highlight" )
           console.log("Image dropped!")
+          console.log($(this).attr('option'))
+          console.log(ui.draggable.attr('correct-answer'))
+          if((ui.draggable.attr('correct-answer')) == ($(this).attr('option'))) {
+            $( this ).addClass( "ui-state-highlight" );
+            // correct answer popup
+            score++;
+            console.log(score);
+            //make no longer draggable
+            ui.draggable( 'disable' );
+          }
+          else {
+            // wrong answer popup
+            console.log(score);
+            // make no longer draggable
+            ui.draggable( 'disable' );
+          }
       }
     });
   } );
