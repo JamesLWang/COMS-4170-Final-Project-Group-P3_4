@@ -1,5 +1,18 @@
 {% extends "layout.html" %}
 
+{% block head %}
+<script type="text/javascript">
+    var data = {{data|tojson}};
+</script>
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+
+{% endblock head %}
+
 {% block content %}
 
 <div id="main" class=" ">
@@ -14,13 +27,13 @@
 <div class="wrap">
 <div class="draggable ui-widget-content row">
 	<div class="col-sm-9">
-	  <p id="draggable_1" class="ui-widget-header" correct-answer="{{data['src'][1]['correct_answer']}}"><img style="opacity: 1" src="{{data['src'][1]['gif']}}" width=100% height=100% opacity=0></p>
-	  <p id="draggable_2" class="ui-widget-header" correct-answer="{{data['src'][2]['correct_answer']}}"><img style="opacity: 1"  src="{{data['src'][2]['gif']}}" width=100% height=100%></p>
-	  <p id="draggable_3" class="ui-widget-header" correct-answer="{{data['src'][3]['correct_answer']}}"><img style="opacity: 1"  src="{{data['src'][3]['gif']}}" width=100% height=100%></p>
+	  <p id="draggable_1" class="ui-widget-header" db="{{data['title']}}" correct-answer="{{data['src'][1]['correct_answer']}}"><img style="opacity: 1" src="{{data['src'][1]['gif']}}" width=100% height=100% opacity=0></p>
+	  <p id="draggable_2" class="ui-widget-header" db="{{data['title']}}" correct-answer="{{data['src'][2]['correct_answer']}}"><img style="opacity: 1"  src="{{data['src'][2]['gif']}}" width=100% height=100%></p>
+	  <p id="draggable_3" class="ui-widget-header" db="{{data['title']}}" correct-answer="{{data['src'][3]['correct_answer']}}"><img style="opacity: 1"  src="{{data['src'][3]['gif']}}" width=100% height=100%></p>
 	  <br>
-	  <p id="draggable_4" class="ui-widget-header" correct-answer="{{data['src'][4]['correct_answer']}}"><img style="opacity: 1"  src="{{data['src'][4]['gif']}}" width=100% height=100%></p>
-	  <p id="draggable_5" class="ui-widget-header" correct-answer="{{data['src'][5]['correct_answer']}}"><img style="opacity: 1"  src="{{data['src'][5]['gif']}}" width=100% height=100%></p>
-	  <p id="draggable_6" class="ui-widget-header" correct-answer="{{data['src'][6]['correct_answer']}}"><img style="opacity: 1"  src="{{data['src'][6]['gif']}}" width=100% height=100%></p>
+	  <p id="draggable_4" class="ui-widget-header" db="{{data['title']}}" correct-answer="{{data['src'][4]['correct_answer']}}"><img style="opacity: 1"  src="{{data['src'][4]['gif']}}" width=100% height=100%></p>
+	  <p id="draggable_5" class="ui-widget-header" db="{{data['title']}}" correct-answer="{{data['src'][5]['correct_answer']}}"><img style="opacity: 1"  src="{{data['src'][5]['gif']}}" width=100% height=100%></p>
+	  <p id="draggable_6" class="ui-widget-header" db="{{data['title']}}" correct-answer="{{data['src'][6]['correct_answer']}}"><img style="opacity: 1"  src="{{data['src'][6]['gif']}}" width=100% height=100%></p>
 	 </div>
 	 <div class="col-sm-3">
 	  <p class="ui-widget-header target droppable" option="{{data['src'][0]['options'][0]}}">{{data['src'][0]['options'][0]}}</p>
@@ -37,7 +50,7 @@
       <a class="page-link" href="{{data['prev']}}" tabindex="-1">Previous</a>
     </li>
     <li class="page-item">
-      <a class="page-link" href="{{data['next']}}/{{data['score']}}">Next</a>
+		<a id="next-button" class="page-link" href="{{data['next']}}">Next</a>
     </li>
   </ul>
 

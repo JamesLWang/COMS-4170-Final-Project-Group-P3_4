@@ -203,12 +203,33 @@ score_db = {
 }
 
 def compute_score():
-	pass
+	global quiz_jump_types_db
+	global quiz_toe_jumps_db
+	global quiz_edge_jumps_db
+
+	score = 0
+	for db in [quiz_jump_types_db, quiz_toe_jumps_db, quiz_edge_jumps_db]:
+		for idx in range(1, len(db)):
+			if db[idx]["correct"] == 1:
+				score += 1
+	print("Score: " + str(score))
+	return score
+
+def clear_score():
+	global quiz_jump_types_db
+	global quiz_toe_jumps_db
+	global quiz_edge_jumps_db
+
+	for db in [quiz_jump_types_db, quiz_toe_jumps_db, quiz_edge_jumps_db]:
+		for idx in range(1, len(db)):
+			db[idx]["correct"] = 0
 
 # ROUTES
 @app.route('/')
 def welcome():
 	global welcome_db
+
+	clear_score()
 
 	data = {}
 	data['src'] = welcome_db
@@ -219,24 +240,26 @@ def welcome():
 	return render_template('welcome.html', data=data)
 
 
-@app.route('/final/<score>')
-def final(score):
+@app.route('/final')
+def final():
 	global final_db
 
+	score = compute_score()
+
 	data = {}
+	data['score'] = score
 	data['src'] = final_db
 	data['title'] = "Course Ended"
 	data['prev'] = "quiz_edge_jumps"
 	data['restart'] = "/"
 
-	return render_template('final.html', data=data, score=score)
+	return render_template('final.html', data=data)
 
 @app.route('/learn_skates')
 def learn_skates():
 	global learn_skates_db
 
 	data= {}
-	data['score'] = 0
 	data['src'] = learn_skates_db
 	data['title'] = "Skate Basics"
 	data['prev'] = "/"
@@ -244,12 +267,11 @@ def learn_skates():
 
 	return render_template('learn_v1.html', data=data)
 
-@app.route('/learn_jump_types/<score>')
-def learn_jump_types(score):
+@app.route('/learn_jump_types')
+def learn_jump_types():
 	global learn_jump_types_db
 
 	data = {}
-	data['score'] = score
 	data['src'] = learn_jump_types_db
 	data['title'] = "Jump Types"
 	data['prev'] = "/learn_skates"
@@ -257,12 +279,11 @@ def learn_jump_types(score):
 
 	return render_template('learn_v1.html', data=data)
 
-@app.route('/learn_toe_jumps/<score>')
-def learn_toe_jumps(score):
+@app.route('/learn_toe_jumps')
+def learn_toe_jumps():
 	global learn_toe_jumps_db
 
 	data = {}
-	data['score'] = score
 	data['src'] = learn_toe_jumps_db
 	data['title'] = "Toe Jumps"
 	data['prev'] = "/quiz_jump_types"
@@ -270,12 +291,11 @@ def learn_toe_jumps(score):
 
 	return render_template('learn_v2.html', data=data)
 
-@app.route('/learn_edge_jumps/<score>')
-def learn_edge_jumps(score):
+@app.route('/learn_edge_jumps')
+def learn_edge_jumps():
 	global learn_edge_jumps_db
 	
 	data = {}
-	data['score'] = score
 	data['src'] = learn_edge_jumps_db
 	data['title'] = "Edge Jumps"
 	data['prev'] = "/quiz_toe_jumps"
@@ -283,13 +303,12 @@ def learn_edge_jumps(score):
 
 	return render_template('learn_v2.html', data=data)
 
-@app.route('/quiz_edge_jumps/<score>')
-def quiz_edge_jumps(score):
+@app.route('/quiz_edge_jumps')
+def quiz_edge_jumps():
 	global quiz_edge_jumps_db
 	global final_db
 	
 	data = {}
-	data['score'] = score
 	data['src'] = quiz_edge_jumps_db
 	data['title'] = "Edge Jumps Quiz"
 	data['prev'] = "/learn_edge_jumps"
@@ -297,12 +316,11 @@ def quiz_edge_jumps(score):
 
 	return render_template('quiz_v2.html', data=data)
 
-@app.route('/quiz_toe_jumps/<score>')
-def quiz_toe_jumps(score):
+@app.route('/quiz_toe_jumps')
+def quiz_toe_jumps():
 	global quiz_toe_jumps_db
 	
 	data = {}
-	data['score'] = score
 	data['src'] = quiz_toe_jumps_db
 	data['title'] = "Toe Jumps Quiz"
 	data['prev'] = "/learn_toe_jumps"
@@ -310,18 +328,38 @@ def quiz_toe_jumps(score):
 
 	return render_template('quiz_v2.html', data=data)
 
-@app.route('/quiz_jump_types/<score>')
-def quiz_jump_types(score):
+@app.route('/quiz_jump_types')
+def quiz_jump_types():
 	global quiz_jump_types_db
 
 	data = {}
-	data['score'] = score
 	data['src'] = quiz_jump_types_db
 	data['title'] = "Jump Types Quiz"
 	data['prev'] = "/learn_jump_types"
 	data['next'] = "/learn_toe_jumps"
 
 	return render_template('quiz_v1.html', data=data)
+
+@app.route('/update_correctness', methods=['GET', 'POST'])
+def update_correctness():
+	global quiz_jump_types_db
+	global quiz_toe_jumps_db
+	global quiz_edge_jumps_db
+
+	index = int(str(request.get_json()['index'])[-1]) # TEMP SOLUTION COME BACK TO THIS
+	db_name = request.get_json()['db']
+	correct = int(request.get_json()['correct'])
+
+	if db_name == "Jump Types Quiz":
+		quiz_jump_types_db[index]["correct"] = correct
+	elif db_name == "Toe Jumps Quiz":
+		quiz_toe_jumps_db[index]["correct"] = correct
+	elif db_name == "Edge Jumps Quiz":
+		quiz_edge_jumps_db[index]["correct"] = correct
+	else:
+		print("An error has occurred.")
+
+	return jsonify(data=None) # no need to return anything
 
 ## Everything below is for reference only
 

@@ -1,5 +1,3 @@
-//var score = 0;
-
 $( function() {
     console.log("OK")
     $( "#draggable" ).draggable();
@@ -18,28 +16,63 @@ $( function() {
     $( "#draggable_6" ).draggable();
     $( ".droppable" ).droppable({
       drop: function( event, ui ) {
-        //$( this )
-          //.addClass( "ui-state-highlight" )
+          $( this ).addClass( "ui-state-highlight" )
           console.log("Image dropped!")
           console.log($(this).attr('option'))
           console.log(ui.draggable.attr('correct-answer'))
           if((ui.draggable.attr('correct-answer')) == ($(this).attr('option'))) {
-            $( this ).addClass( "ui-state-highlight" );
-            // correct answer popup
-            data['score']++; //TODO: not working, fix
-            console.log(data['score']);
-            //score++;
-            //console.log(score);
-            //make no longer draggable
-            ui.draggable( 'disable' );
+            //$( this ).addClass( "ui-state-highlight" );
+            //make no longer draggable?
+            //ui.draggable( 'disable' );
+
+            item = {
+                "index": ui.draggable.attr('id'),
+                "db": ui.draggable.attr('db'),
+                "correct": 1
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "/update_correctness",
+                dataType : "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(item),
+                success: function (response) {
+                    console.log("success");
+                },
+                error: function(request, status, error){
+                    console.log("Error");
+                    console.log(request)
+                    console.log(status)
+                    console.log(error)
+                }
+            });
           }
           else {
             // wrong answer popup
-            console.log(data['score']);
-            //console.log(score);
-            // make no longer draggable
-            ui.draggable( 'disable' );
+            //ui.draggable( 'disable' );
+            item = {
+                "index": ui.draggable.attr('id'),
+                "db": ui.draggable.attr('db'),
+                "correct": 0
+            }
+            $.ajax({
+                type: "POST",
+                url: "/update_correctness",
+                dataType : "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(item),
+                success: function (response) {
+                    console.log("success");
+                },
+                error: function(request, status, error){
+                    console.log("Error");
+                    console.log(request)
+                    console.log(status)
+                    console.log(error)
+                }
+            });
           }
       }
     });
-  } );
+ });

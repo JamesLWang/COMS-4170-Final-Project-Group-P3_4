@@ -3,11 +3,8 @@
 {% block head %}
 {{ super() }}
 
-<script src="{{url_for('static', filename='final.js')}}"></script>
-
 <script>
     var data = {{data|tojson}};
-	var score = {{score|tojson}};
 </script>
 
 {% endblock head %}
@@ -28,7 +25,7 @@
         Table Here.
     </div>
     <div class="col-md-6 col-sm-6">
-        Score: <label class="score" name="score">{{score}}</label>/8
+        Score: <label class="score" name="score">{{data.score}}</label>/8
     </div>
 </div>
 
