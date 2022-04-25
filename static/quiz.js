@@ -24,6 +24,8 @@ $( function() {
             //$( this ).addClass( "ui-state-highlight" );
             //make no longer draggable?
             //ui.draggable( 'disable' );
+            
+            alert("Correct Answer!")
 
             item = {
                 "index": ui.draggable.attr('id'),
@@ -51,6 +53,9 @@ $( function() {
           else {
             // wrong answer popup
             //ui.draggable( 'disable' );
+
+            alert("Incorrect, please try again!")
+
             item = {
                 "index": ui.draggable.attr('id'),
                 "db": ui.draggable.attr('db'),

@@ -288,3 +288,10 @@ iframe {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: large;
   }
+
+  .drop-item {
+    /* margin: 25% 0 25% 0; */
+    text-align: center;
+    padding-top: 35px;
+    color: darkblue;
+  }
