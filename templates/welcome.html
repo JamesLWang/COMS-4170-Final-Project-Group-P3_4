@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="" alt="Machine learning background photo"> 
-        <body>
+<div class="" alt="Machine learning background photo"/> 
+<div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-12 head">
         <h1 class="text-bolder">Figure Ice Skating</h1>
@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-md-6 col-sm-6">
       <h1 class="text-bolder content">Learn about the following jumps</h1>
-      <ul style="list-style-type:circle">
+      <ul class="list-items" style="list-style-type:circle">
         <li>Toe Loop</li>
         <li>Flip</li>
         <li>Lutz</li>
@@ -24,20 +24,16 @@
       </ul>
     </div>
     <div class="col-md-6 col-sm-6">
-      <img class="pic1" src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/10104007/2018_01_26_13_04_23.gif" />
+      <img class="pic" src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/10104007/2018_01_26_13_04_23.gif" />
     </div>
   </div>
-    </div>
-    
-        <div id="main">
-            <br>
-            <br>
-    </div>
-
-     <center>
-    <a href="{{data['next']}}"><button id="start-btn"  class="btn btn-lg btn-light start">Start Learning!</button></a>
+  <div id="main">
+    <br>
+  </div>
+  <center>
+    <a href="{{data['next']}}"><button id="start-btn"  class="btn btn-lg btn-secondary start">Start Learning!</button></a>
   </center>
-
+</div>
 
 
 {% endblock %}

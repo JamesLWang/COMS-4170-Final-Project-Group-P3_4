@@ -25,19 +25,20 @@
         Table Here.
     </div>
     <div class="col-md-6 col-sm-6">
-        Score: <label class="score" name="score">{{data.score}}</label>/8
+        <div class="text-centering">
+        Current Score: <label class="score" name="score">{{data.score}}</label>/8
+        </div>
+        <div class="btn-centering">
+            <div>
+                <a href="{{data['prev']}}"><button class="btn btn-lg btn-success btn-block">Go Back</button></a>
+            </div>
+            <br>
+            <div>
+                <a href="{{data['restart']}}"><button class="btn btn-lg btn-warning btn-block">Retake Course</button></a>
+            </div>
+        </div>
     </div>
 </div>
-
-
-<center>
-    <span>
-        <a href="{{data['prev']}}"><button class="btn btn-lg btn-success">Previous</button></a>
-    </span>
-    <span>
-        <a href="{{data['restart']}}"><button class="btn btn-lg btn-warning">Retake</button></a>
-    </span>
-</center>
 
 
 {% endblock %}

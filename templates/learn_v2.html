@@ -19,17 +19,17 @@
 {{ super() }}
 
 <div class="row">
-    <div class="col-md-12 title">
+    <div class="col-md-12 title head">
         <h1>{{data['title']}}</h1>
     </div>
     
     {% for res in data['src'] %}
-    <div class="col-md-3">
-        <h3 class="p-2">{{res['name']}}</h3>
+    <div class="col-md-4">
+        <h3 class="p-2 content">{{res['name']}}</h3>
         <p>{{res['description']}}</p>
-        <img src="{{res['img']}}", width=33%, class="rounded">
+        <img src="{{res['img']}}", width=33%, class="rounded pic">
         <br>
-        <img src="{{res['gif']}}", width=50%, class="rounded">
+        <img src="{{res['gif']}}", width=50%, class="rounded pic">
     </div>
     {% endfor %}
 

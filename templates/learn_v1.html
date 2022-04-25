@@ -19,20 +19,19 @@
 {{ super() }}
 
 <div class="row">
-    <div class="col-md-12 title">
+    <div class="col-md-12 title head">
         <h1>{{data['title']}}</h1>
     </div>
     {% for res in data['src'] %}
-    <div class="col-md-5">
-        <h3 class="p-2">{{res['name']}}</h3>
+    <div class="col-md-6">
+        <h3 class="p-2 content">{{res['name']}}</h3>
         <p>{{res['description']}}</p>
-        <img src="{{res['img']}}", width=50%, class="rounded">
+        <img src="{{res['img']}}", width=50%, class="rounded pic">
         <br>
-        <img src="{{res['gif']}}", width=50%, class="rounded">
+        <img src="{{res['gif']}}", width=50%, class="rounded pic">
     </div>
     {% endfor %}
 </div>
-
 	<ul class="pagination justify-content-end mr-3">
     <li class="page-item">
       <a class="page-link" href="{{data['prev']}}" tabindex="-1">Previous</a>
@@ -41,5 +40,5 @@
       <a class="page-link" href="{{data['next']}}">Next</a>
     </li>
   </ul>
-
+  
 {% endblock content %}
