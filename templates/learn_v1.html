@@ -26,11 +26,13 @@
     <div class="row wrap">
     {% for res in data['src'] %}
     <div class="col-md-6">
-        <h3 class="p-2 content">{{res['name']}}</h3>
+        <center><h3 class="p-2 content">{{res['name']}}</h3></center>
         <p>{{res['description']}}</p>
+        <center>
         <img src="{{res['img']}}", width=50%, class="rounded pic">
         <br>
         <img src="{{res['gif']}}", width=50%, class="rounded pic">
+        </center>
     </div>
     {% endfor %}
 </div>

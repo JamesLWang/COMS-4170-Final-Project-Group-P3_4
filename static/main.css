@@ -5,6 +5,10 @@
   padding-right: 10%;
 }
 
+.learn_desc{
+  height: 270px;
+}
+
 .target{
   float: right;
   height:  100px !important;

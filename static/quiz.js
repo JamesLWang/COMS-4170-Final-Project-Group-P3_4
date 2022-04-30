@@ -33,6 +33,8 @@ $( function() {
                 "correct": 1
             }
 
+            ui.draggable.remove()
+            $( this ).removeClass( "ui-state-highlight" )
             $.ajax({
                 type: "POST",
                 url: "/update_correctness",
