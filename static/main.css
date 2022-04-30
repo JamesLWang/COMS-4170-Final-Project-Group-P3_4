@@ -254,6 +254,7 @@ iframe {
     background-color: lightblue;
     text-align: center;
     color: darkslateblue ;
+    height: 125px;
   }
   
   .text-bolder{
