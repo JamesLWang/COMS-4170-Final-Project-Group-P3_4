@@ -22,6 +22,8 @@
     <div class="col-md-12 title head">
         <h1>{{data['title']}}</h1>
     </div>
+
+    <div class="row wrap">
     {% for res in data['src'] %}
     <div class="col-md-6">
         <h3 class="p-2 content">{{res['name']}}</h3>
@@ -31,6 +33,8 @@
         <img src="{{res['gif']}}", width=50%, class="rounded pic">
     </div>
     {% endfor %}
+</div>
+
 </div>
 	<ul class="pagination justify-content-end mr-3">
     <li class="page-item">
