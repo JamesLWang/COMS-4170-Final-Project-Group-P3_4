@@ -258,7 +258,7 @@ iframe {
     background-color: lightblue;
     text-align: center;
     color: darkslateblue ;
-    height: 125px;
+    /* height: 125px; */
   }
   
   .text-bolder{
@@ -299,4 +299,28 @@ iframe {
     text-align: center;
     padding-top: 35px;
     color: darkblue;
+  }
+
+  .li-styling {
+    width: 150px;
+    color: blue;
+    text-align: center;
+  }
+
+  .ul-styling {
+    display: inline-block;
+    vertical-align: middle;
+    justify-content: center;
+    display: flex;
+    border-radius: 25%;
+    color: #6c58bF;
+  }
+
+  .page-item:first-child .page-link{
+    border-radius: 0.25rem;
+  }
+
+  .text-decor {
+    text-decoration: none !important;
+    color: #FFFFFF;
   }
