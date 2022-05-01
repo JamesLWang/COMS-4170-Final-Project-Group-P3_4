@@ -186,6 +186,17 @@ def results_table():
 
 	results = {}
 
+	#Jump Types
+	for i in range(1, 3):
+		if quiz_jump_types_db[i]["correct"] == 1:	
+			results[quiz_jump_types_db[i]["correct_answer"]] = "✓"
+		else:
+			results[quiz_jump_types_db[i]["correct_answer"]] = "✗"
+	for i in range(3, 5):
+		if quiz_jump_types_db[i]["correct"] == 1:	
+			results[quiz_jump_types_db[i]["correct_answer"]] += "✓"
+		else:
+			results[quiz_jump_types_db[i]["correct_answer"]] += "✗"
 	# Toe Jumps
 	for i in range(1, len(quiz_toe_jumps_db)):
 		if quiz_toe_jumps_db[i]["correct"] == 1:	
