@@ -179,6 +179,26 @@ def compute_score():
 	print("Score: " + str(score))
 	return score
 
+def identify_areas_of_difficulty():
+	global quiz_jump_types_db
+	global quiz_toe_jumps_db
+	global quiz_edge_jumps_db
+
+	# Jump types
+	for i in range(1, len(quiz_jump_types_db)):
+		if quiz_jump_types_db[i]["correct"] == 0:
+			return "Jump Types."
+	# Toe Jumps
+	for i in range(1, len(quiz_toe_jumps_db)):
+		if quiz_toe_jumps_db[i]["correct"] == 0:
+			return "Toe Jumps."
+	# Edge Jumps
+	for i in range(1, len(quiz_edge_jumps_db)):
+		if quiz_edge_jumps_db[i]["correct"] == 0:
+			return "Edge Jumps."
+	
+	return "Nothing (Congragulations on a Perfect Score)!"
+
 def clear_score():
 	global quiz_jump_types_db
 	global quiz_toe_jumps_db
@@ -209,9 +229,11 @@ def final():
 	global final_db
 
 	score = compute_score()
+	area = identify_areas_of_difficulty()
 
 	data = {}
 	data['score'] = score
+	data['area of difficulty'] = area
 	data['src'] = final_db
 	data['title'] = "Course Ended"
 	data['prev'] = "quiz_edge_jumps"
