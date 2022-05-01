@@ -104,48 +104,12 @@ quiz_edge_jumps_db = [
 	"gif": "https://cdn.vox-cdn.com/thumbor/jdRRKcOZaKFxJt4EvAMIpQQM_r4=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/10104007/2018_01_26_13_04_23.gif",
 	"numAttempts": 0,
 	"correct": 0
-},
-{
-	"correct_answer": "Axel",
-	"gif": "https://cdn.vox-cdn.com/thumbor/K9LwhT7m7po13sFf8xnOFANAc1g=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/10100141/2018_01_25_21_51_46.gif",
-	"numAttempts": 0,
-	"correct": 0
-},
-{
-	"correct_answer": "Salchow",
-	"gif": "https://cdn.vox-cdn.com/thumbor/17uuaevDvRt6iBUu9_EuyDyhfxc=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/10100567/2018_01_25_22_35_51.gif",
-	"numAttempts": 0,
-	"correct": 0
-},
-{
-	"correct_answer": "Loop",
-	"gif": "https://cdn.vox-cdn.com/thumbor/jdRRKcOZaKFxJt4EvAMIpQQM_r4=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/10104007/2018_01_26_13_04_23.gif",
-	"numAttempts": 0,
-	"correct": 0
 }
 ]
 
 quiz_toe_jumps_db = [
 {
 	"options": ["Toe Loop", "Flip", "Lutz"]
-},
-{
-	"correct_answer": "Toe Loop",
-	"gif": "https://cdn.vox-cdn.com/thumbor/QLlcMAq1TEpn9jc1jZYs6JclP4Q=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/10100903/2018_01_25_23_11_49.gif",
-	"numAttempts": 0,
-	"correct": 0
-},
-{
-	"correct_answer": "Flip",
-	"gif": "https://cdn.vox-cdn.com/thumbor/JpgaaL69exCU2uC_pL14gMYDG_w=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/10105599/2018_01_26_14_09_56.gif",
-	"numAttempts": 0,
-	"correct": 0
-},
-{
-	"correct_answer": "Lutz",
-	"gif": "https://cdn.vox-cdn.com/thumbor/QDbxxgTVtOpZzISQwq3l6TI8CB4=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/10100055/2018_01_25_21_30_48.gif",
-	"numAttempts": 0,
-	"correct": 0
 },
 {
 	"correct_answer": "Toe Loop",
@@ -191,9 +155,9 @@ quiz_jump_types_db = [
 	"correct": 0
 },
 {
-	"correct_answer": "Toe Jump",
-	"gif": "https://cdn.vox-cdn.com/thumbor/JpgaaL69exCU2uC_pL14gMYDG_w=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/10105599/2018_01_26_14_09_56.gif",
-	"numAttempts": 1,
+	"correct_answer": "Edge Jump",
+	"gif": "https://cdn.vox-cdn.com/thumbor/jdRRKcOZaKFxJt4EvAMIpQQM_r4=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/10104007/2018_01_26_13_04_23.gif",
+	"numAttempts": 0,
 	"correct": 0
 }
 ]
