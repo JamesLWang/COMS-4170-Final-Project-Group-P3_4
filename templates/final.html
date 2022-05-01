@@ -14,17 +14,47 @@
     <div class="" alt="Machine learning background photo"> 
 <div class="row">
     <div class="col-md-12 col-sm-12 head">
-        <h2 class="text-bolder">Congratulations on completing the course!</h1>
-        <h3 class="lead">Results</h3>
+        <h2 class="text-bolder">RESULTS</h1>
+        <h3 class="lead">Congratulations on completing the course!</h3>
     </div>
 </div>
 
     
 <div class="row wrap">
     <div class="col-md-6 col-sm-6">
-        Based on your performance, we would recommend that you revisit {{data['area of difficulty']}}
+        <br>
+        <table>
+            <tr>
+                <th colspan="2">Answered Correctly?</th>
+             </tr>
+            <tr>
+                <th>Toe Loop</th>
+                <td>{{data['results']['Toe Loop']}}</td>
+            </tr>
+            <tr>
+                <th>Flip</th>
+                <td>{{data['results']['Flip']}}</td>
+            </tr>
+            <tr>
+                <th>Lutz</th>
+                <td>{{data['results']['Lutz']}}</td>
+            </tr>
+            <tr>
+                <th>Salchow</th>
+                <td>{{data['results']['Salchow']}}</td>
+            </tr>
+            <tr>
+                <th>Loop</th>
+                <td>{{data['results']['Loop']}}</td>
+            </tr>
+            <tr>
+                <th>Axel</th>
+                <td>{{data['results']['Axel']}}</td>
+            </tr>
+        </table>
     </div>
     <div class="col-md-6 col-sm-6">
+        <br><br>
         <div class="text-centering">
         Current Score: <label class="score" name="score">{{data.score}}</label>/8
         </div>

@@ -179,6 +179,29 @@ def compute_score():
 	print("Score: " + str(score))
 	return score
 
+def results_table():
+	global quiz_jump_types_db
+	global quiz_toe_jumps_db
+	global quiz_edge_jumps_db
+
+	results = {}
+
+	# Toe Jumps
+	for i in range(1, len(quiz_toe_jumps_db)):
+		if quiz_toe_jumps_db[i]["correct"] == 1:	
+			results[quiz_toe_jumps_db[i]["correct_answer"]] = "✓"
+		else:
+			results[quiz_toe_jumps_db[i]["correct_answer"]] = "✗"
+	# Edge Jumps
+	for i in range(1, len(quiz_edge_jumps_db)):
+		if quiz_edge_jumps_db[i]["correct"] == 1:	
+			results[quiz_edge_jumps_db[i]["correct_answer"]] = "✓"
+		else:
+			results[quiz_edge_jumps_db[i]["correct_answer"]] = "✗"
+	
+	return results
+
+# Temporarily deprecated
 def identify_areas_of_difficulty():
 	global quiz_jump_types_db
 	global quiz_toe_jumps_db
@@ -230,10 +253,12 @@ def final():
 
 	score = compute_score()
 	area = identify_areas_of_difficulty()
+	results = results_table()
 
 	data = {}
 	data['score'] = score
 	data['area of difficulty'] = area
+	data['results'] = results
 	data['src'] = final_db
 	data['title'] = "Course Ended"
 	data['prev'] = "quiz_edge_jumps"
