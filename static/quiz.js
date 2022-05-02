@@ -20,7 +20,7 @@ $( function() {
     $( "#draggable_6" ).draggable();
     $( ".droppable" ).droppable({
       drop: function( event, ui ) {
-          $( this ).addClass( "ui-state-highlight" )
+          //$( this ).addClass( "ui-state-highlight" )
           console.log("Image dropped!")
           console.log($(this).attr('option'))
           console.log(ui.draggable.attr('correct-answer'))
@@ -38,7 +38,7 @@ $( function() {
             }
 
             ui.draggable.remove()
-            $( this ).removeClass( "ui-state-highlight" )
+            //$( this ).removeClass( "ui-state-highlight" )
             $.ajax({
                 type: "POST",
                 url: "/update_correctness",
