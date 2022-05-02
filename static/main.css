@@ -344,3 +344,7 @@ iframe {
   .light-grey {
     color: rgb(171, 171, 171);
   }
+
+  .invisible {
+    color: #fff;
+  }

@@ -4,10 +4,14 @@ $( function() {
   } );
 
  $( function() {
-    $( "#draggable_parent_1" ).draggable({ containment: "parent" });
-    $( "#draggable_parent_2" ).draggable({ containment: "parent" });
-    $( "#draggable_parent_3" ).draggable({ containment: "parent" });
-    $( "#draggable_parent_4" ).draggable({ containment: "parent" });
+    //$( "#draggable_parent_1" ).draggable({ containment: "parent" });
+    //$( "#draggable_parent_2" ).draggable({ containment: "parent" });
+    //$( "#draggable_parent_3" ).draggable({ containment: "parent" });
+    //$( "#draggable_parent_4" ).draggable({ containment: "parent" });
+    $( "#draggable_parent_1" ).draggable();
+    $( "#draggable_parent_2" ).draggable();
+    $( "#draggable_parent_3" ).draggable();
+    $( "#draggable_parent_4" ).draggable();
     $( "#draggable_1" ).draggable();
     $( "#draggable_2" ).draggable();
     $( "#draggable_3" ).draggable();
