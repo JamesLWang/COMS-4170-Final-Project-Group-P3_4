@@ -8,13 +8,13 @@ app = Flask(__name__)
 # Collection of Databases for Learning
 learn_skates_db = [
 	{
-		"name": "Toe Pick",
-		"description": "The toe pick is a little set of jagged teeth at the front of the blade that helps skaters stab into the ice to push upward and launch themselves into the air.",
+		"name": "Edges",
+		"description": "The inside edges are toward the big toe, and the outside edges are toward the pinky toe. Which edge a skater puts his weight on going into a jump is what distinguishes one jump from another.",
 		"img": "https://images.squarespace-cdn.com/content/v1/5a086441914e6b339a5f2b21/1542250387886-Q6SQ1LY3GRCAOE6IKNVE/edge.JPG?format=750w"
 	},
 	{
-		"name": "Edges",
-		"description": "The inside edges are toward the big toe, and the outside edges are toward the pinky toe. Which edge a skater puts his weight on going into a jump is what distinguishes one jump from another.",
+		"name": "Toe Pick",
+		"description": "The toe pick is a little set of jagged teeth at the front of the blade that helps skaters stab into the ice to push upward and launch themselves into the air.",
 		"img": "https://bigthink.com/wp-content/uploads/2018/02/18411162.jpg?fit=1200,675"
 	}
 ]
